@@ -7,18 +7,34 @@ import rigoImage from "../../img/rigo-baby.jpg";
 export function Home() {
 	return (
 		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+			<div className="card">
+				<div className="card-header">
+					<h4>Add Products</h4>
+				</div>
+				<div className="card-body">
+					<input
+						className="form-control"
+						id="name"
+						type="text"
+						placeholder="Product Name"
+					/>
+					<input
+						className="form-control"
+						id="price"
+						type="number"
+						placeholder="Product Price"
+					/>
+					<input
+						className="form-control"
+						id="year"
+						type="number"
+						placeholder="Year Product"
+					/>
+					<a href="#" className="btn btn-primary">
+						Go somewhere
+					</a>
+				</div>
+			</div>
 		</div>
 	);
 }
