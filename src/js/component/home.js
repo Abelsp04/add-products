@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
-class Home extends Component {
+export class Home extends Component {
 	render() {
 		return (
 			<div className="container">
@@ -52,4 +52,4 @@ class Home extends Component {
 		);
 	}
 }
-export default Home;
+
