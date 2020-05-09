@@ -1,55 +1,54 @@
-import React, { Component } from "react";
+import React from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
-
+const api = {
+	key: "e066e2c613858fe50862b4c74e2f0030",
+	base: "https://api.openweathermap.org/data/2.5/"
+};
 //create your first component
-export class Home extends Component {
-	render() {
-		return (
-			<div className="container">
-				<div className="row pt-5">
-					<div className="col-md-4">
-						<div className="card">
-							<div className="card-header">
-								<h4>Add Products</h4>
-							</div>
-							<form className="card-body">
-								<div className="form-group">
-									<input
-										className="form-control"
-										id="name"
-										type="text"
-										placeholder="Product Name"
-									/>
-									<input
-										className="form-control"
-										id="price"
-										type="number"
-										step="0.01"
-										placeholder="Product Price"
-									/>
-									<input
-										className="form-control"
-										id="year"
-										type="number"
-										placeholder="Year Product"
-									/>
-								</div>
-								<input
-									className="btn btn-primary btn-block"
-									type="submit"
-									value="save"
-								/>
-							</form>
-						</div>
-					</div>
-					<div className="col-md-8">
-						<div className="ptoduct-list" />
-					</div>
-				</div>
-			</div>
-		);
-	}
-}
+export function Home() {
+	const dateBuilder = d => {
+		let months = [
+			"January",
+			"February",
+			"March",
+			"April",
+			"May",
+			"June",
+			"July",
+			"August",
+			"September",
+			"October",
+			"November",
+			"December"
+		];
+		let days = [
+			"Sunday",
+			"Monday",
+			"Tuesday",
+			"Wednesday",
+			"Thursday",
+			"Friday",
+			"Saturday"
+		];
+	};
 
+	return (
+		<div className="home">
+			<main>
+				<div className="search-box">
+					<input
+						type="text"
+						className="search-bar"
+						placeholder="search..."
+					/>
+				</div>
+				<div className="location- box">
+					<div className="location">Miami FL, US</div>
+					<div className="date">{dateBuilder(new Date())}</div>
+				</div>
+			</main>
+		</div>
+	);
+}
